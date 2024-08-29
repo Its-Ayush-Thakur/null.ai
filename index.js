@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 
 app.get('/api/:slug', async (req, res) => {
   text = await run(req.params.slug)
-  res.end(text)
+  res.json({ content: text })
 })
 
 app.listen(port, () => {
